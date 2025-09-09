@@ -1,0 +1,437 @@
+{
+  "api": {
+    "name": "CapacitorTlsPlugin",
+    "slug": "capacitortlsplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "connect",
+        "signature": "(options: ConnectOptions) => Promise<ConnectResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "ConnectOptions"
+          }
+        ],
+        "returns": "Promise<ConnectResult>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ConnectResult",
+          "ConnectOptions"
+        ],
+        "slug": "connect"
+      },
+      {
+        "name": "send",
+        "signature": "(options: SendOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SendOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "SendOptions"
+        ],
+        "slug": "send"
+      },
+      {
+        "name": "disconnect",
+        "signature": "(options: DisconnectOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "DisconnectOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DisconnectOptions"
+        ],
+        "slug": "disconnect"
+      },
+      {
+        "name": "disconnectAll",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "disconnectall"
+      },
+      {
+        "name": "bindToWifi",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "bindtowifi"
+      },
+      {
+        "name": "unbindNetwork",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "unbindnetwork"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'connect', listenerFunc: (ev: ConnectEvent) => void) => Promise<any>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'connect'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(ev: ConnectEvent) => void"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ConnectEvent"
+        ],
+        "slug": "addlistenerconnect-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'data', listenerFunc: (ev: DataEvent) => void) => Promise<any>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'data'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(ev: DataEvent) => void"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DataEvent"
+        ],
+        "slug": "addlistenerdata-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'close', listenerFunc: (ev: CloseEvent) => void) => Promise<any>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'close'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(ev: CloseEvent) => void"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CloseEvent"
+        ],
+        "slug": "addlistenerclose-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'error', listenerFunc: (ev: ErrorEvent) => void) => Promise<any>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'error'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(ev: ErrorEvent) => void"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ErrorEvent"
+        ],
+        "slug": "addlistenererror-"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "ConnectResult",
+      "slug": "connectresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ConnectOptions",
+      "slug": "connectoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "host",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "port",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "insecure",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "sni",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "alpnProtocols",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string[] | undefined"
+        },
+        {
+          "name": "timeout",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "SendOptions",
+      "slug": "sendoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "encoding",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Encoding"
+          ],
+          "type": "Encoding"
+        }
+      ]
+    },
+    {
+      "name": "DisconnectOptions",
+      "slug": "disconnectoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ConnectEvent",
+      "slug": "connectevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "DataEvent",
+      "slug": "dataevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "data",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "encoding",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "'base64'"
+        }
+      ]
+    },
+    {
+      "name": "CloseEvent",
+      "slug": "closeevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "error",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ErrorEvent",
+      "slug": "errorevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "id",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "error",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [
+    {
+      "name": "Encoding",
+      "slug": "encoding",
+      "docs": "",
+      "types": [
+        {
+          "text": "'base64'",
+          "complexTypes": []
+        },
+        {
+          "text": "'utf8'",
+          "complexTypes": []
+        },
+        {
+          "text": "'hex'",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
