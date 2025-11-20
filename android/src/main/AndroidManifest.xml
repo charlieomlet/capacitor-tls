@@ -12,6 +12,5 @@
 
     <!-- Location permission only for Android 12 and below -->
     <uses-permission
-            android:name="android.permission.ACCESS_FINE_LOCATION"
-            android:maxSdkVersion="32" />
+            android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
