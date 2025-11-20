@@ -1,5 +1,9 @@
 export type Encoding = 'base64' | 'utf8' | 'hex';
 
+export interface TlsPermissions {
+    nearbyWifi: 'granted' | 'denied' | 'prompt';
+}
+
 export interface ConnectOptions {
   host: string;
   port: number;
@@ -44,6 +48,8 @@ export interface ErrorEvent {
   error: string;
 }
 export interface CapacitorTlsPlugin {
+  checkPermissions(): Promise<TlsPermissions>;
+  requestPermissions(): Promise<TlsPermissions>;
   connect(options: ConnectOptions): Promise<ConnectResult>;
   send(options: SendOptions): Promise<void>;
   disconnect(options: DisconnectOptions): Promise<void>;

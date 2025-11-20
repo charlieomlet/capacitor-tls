@@ -7,6 +7,12 @@ const CapacitorTls = core.registerPlugin('CapacitorTls', {
 });
 
 class CapacitorTlsWeb extends core.WebPlugin {
+    async checkPermissions() {
+        throw this.unimplemented('Not implemented on Web');
+    }
+    async requestPermissions() {
+        throw this.unimplemented('Not implemented on Web');
+    }
     async connect(_options) {
         throw this.unimplemented('TLS sockets are not available on the web.');
     }

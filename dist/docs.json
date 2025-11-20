@@ -6,6 +6,30 @@
     "tags": [],
     "methods": [
       {
+        "name": "checkPermissions",
+        "signature": "() => Promise<TlsPermissions>",
+        "parameters": [],
+        "returns": "Promise<TlsPermissions>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "TlsPermissions"
+        ],
+        "slug": "checkpermissions"
+      },
+      {
+        "name": "requestPermissions",
+        "signature": "() => Promise<TlsPermissions>",
+        "parameters": [],
+        "returns": "Promise<TlsPermissions>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "TlsPermissions"
+        ],
+        "slug": "requestpermissions"
+      },
+      {
         "name": "connect",
         "signature": "(options: ConnectOptions) => Promise<ConnectResult>",
         "parameters": [
@@ -196,6 +220,22 @@
     "properties": []
   },
   "interfaces": [
+    {
+      "name": "TlsPermissions",
+      "slug": "tlspermissions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "nearbyWifi",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "'granted' | 'denied' | 'prompt'"
+        }
+      ]
+    },
     {
       "name": "ConnectResult",
       "slug": "connectresult",

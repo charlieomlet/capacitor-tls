@@ -13,6 +13,8 @@ npx cap sync
 
 <docgen-index>
 
+* [`checkPermissions()`](#checkpermissions)
+* [`requestPermissions()`](#requestpermissions)
 * [`connect(...)`](#connect)
 * [`send(...)`](#send)
 * [`disconnect(...)`](#disconnect)
@@ -31,6 +33,28 @@ npx cap sync
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### checkPermissions()
+
+```typescript
+checkPermissions() => Promise<TlsPermissions>
+```
+
+**Returns:** <code>Promise&lt;<a href="#tlspermissions">TlsPermissions</a>&gt;</code>
+
+--------------------
+
+
+### requestPermissions()
+
+```typescript
+requestPermissions() => Promise<TlsPermissions>
+```
+
+**Returns:** <code>Promise&lt;<a href="#tlspermissions">TlsPermissions</a>&gt;</code>
+
+--------------------
+
 
 ### connect(...)
 
@@ -174,6 +198,13 @@ removeAllListeners() => Promise<void>
 
 
 ### Interfaces
+
+
+#### TlsPermissions
+
+| Prop             | Type                                           |
+| ---------------- | ---------------------------------------------- |
+| **`nearbyWifi`** | <code>'granted' \| 'denied' \| 'prompt'</code> |
 
 
 #### ConnectResult

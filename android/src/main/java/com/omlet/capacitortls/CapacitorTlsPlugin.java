@@ -1,5 +1,6 @@
 package com.omlet.capacitortls;
 
+import android.Manifest;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -12,6 +13,10 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import com.getcapacitor.PermissionState;
+import com.getcapacitor.annotation.Permission;
+import com.getcapacitor.annotation.PermissionCallback;
+
 
 import org.json.JSONArray;
 
@@ -21,7 +26,15 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-@CapacitorPlugin(name = "CapacitorTls")
+@CapacitorPlugin(
+    name = "CapacitorTls",
+    permissions = {
+        @Permission(
+            alias = "nearbyWifi",
+            strings = { Manifest.permission.NEARBY_WIFI_DEVICES }
+        )
+    }
+)
 public class CapacitorTlsPlugin extends Plugin {
     private final Map<String, TlsConnection> connections = new ConcurrentHashMap<>();
     private ConnectivityManager.NetworkCallback wifiCallback;
@@ -234,5 +247,40 @@ public class CapacitorTlsPlugin extends Plugin {
             out[i / 2] = (byte) (Integer.parseInt(clean.substring(i, i + 2), 16) & 0xFF);
         }
         return out;
+    }
+
+    @PluginMethod
+    public void checkPermissions(PluginCall call) {
+        JSObject ret = new JSObject();
+        PermissionState state;
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            state = PermissionState.GRANTED;
+        } else {
+            state = getPermissionState("nearbyWifi");
+        }
+
+        ret.put("nearbyWifi", state.toString());
+        call.resolve(ret);
+    }
+
+    @PluginMethod
+    public void requestPermissions(PluginCall call) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            JSObject ret = new JSObject();
+            ret.put("nearbyWifi", PermissionState.GRANTED.toString());
+            call.resolve(ret);
+            return;
+        }
+
+        requestPermissionForAlias("nearbyWifi", call, "permissionsCallback");
+    }
+
+    @PermissionCallback
+    private void permissionsCallback(PluginCall call) {
+        JSObject ret = new JSObject();
+        PermissionState state = getPermissionState("nearbyWifi");
+        ret.put("nearbyWifi", state.toString());
+        call.resolve(ret);
     }
 }
